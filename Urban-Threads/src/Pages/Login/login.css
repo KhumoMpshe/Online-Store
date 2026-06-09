@@ -1,0 +1,10 @@
+.login {
+  max-width: 300px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f5e4c7;
+  padding: 20px;
+  border-radius: 5px;
+}
