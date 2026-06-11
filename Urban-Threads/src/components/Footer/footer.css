@@ -1,0 +1,134 @@
+.site-footer {
+  background: #000;
+  color: #fff;
+  padding: 40px 20px 20px;
+  margin-top: 0;
+}
+.footer-top {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 30px;
+  align-items: start;
+  text-align: left;
+}
+.footer-column h3 {
+  margin-bottom: 16px;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.footer-column a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.footer-column a:hover {
+  color: #fff;
+}
+.footer-subscribe .subscribe-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.footer-subscribe input {
+  flex: 1 1 200px;
+  min-width: 200px;
+  padding: 14px 16px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+.footer-subscribe input::placeholder {
+  color: #bbb;
+}
+.footer-subscribe button {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 24px;
+  background: #ffd500;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+}
+.footer-subscribe button:hover {
+  opacity: 0.95;
+}
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+.social-links a {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+.footer-bottom span {
+  color: #ccc;
+  font-size: 14px;
+}
+.footer-bottom .footer-links {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+    display: flex;
+    gap: 15px;
+}
+.footer-bottom .footer-links a {
+  margin-bottom: 0;
+}
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .site-footer {
+    padding: 30px 16px 16px;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+  .footer-subscribe .subscribe-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .footer-subscribe button {
+    width: 100%;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-bottom .footer-links {
+    justify-content: flex-start;
+  }
+}
+

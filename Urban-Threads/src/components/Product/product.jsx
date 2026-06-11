@@ -5,8 +5,10 @@ export default function ProductCard({ product, addToCart }) {
     <div className="card">
       <img src={product.imageURL} alt={product.name} />
       <h3>{product.name}</h3>
+      <p>{product.description}</p>
+      <p>{product.size}</p>
       <p>{product.category}</p>
-      <p>${product.price}</p>
+      <p>R{product.price}</p>
 
       <button onClick={() => addToCart(product)}>
         Add to Cart

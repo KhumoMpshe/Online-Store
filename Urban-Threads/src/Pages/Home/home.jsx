@@ -17,10 +17,6 @@ function Home() {
                 <Link to="/shop">
                     <button className="btn">Shop Now</button>
                 </Link>
-
-                <Link to="/login">
-                    <button className="btn">Login</button>
-                </Link>
             </div>
         </header>
     </div>

@@ -16,7 +16,12 @@ export default function Navbar() {
   return (
     <nav className="navbar">
         <h1><a href="/" className="nav-link">Urban Threads</a></h1>
-    
+        
+        <div className="search-bar">
+            <span className="material-icons search-icon">search</span>
+            <input type="text" placeholder="Search..." />
+        </div>
+
         <div className="nav-right">
             <div className="links">
                 <Link to="/">Home</Link>

@@ -1,9 +1,113 @@
 .shop {
   padding: 20px;
+  max-width: 100%;
+  width: 100%;
 }
 
+/* Collections landing grid */
+.shop-collections .collections {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 20px auto 0;
+  max-width: 1400px;
+  box-sizing: border-box;
+}
+
+.collection-card {
+  display: block;
+  position: relative;
+  min-height: 360px;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background: #111;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.collection-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection-card span {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 6px 14px rgba(0,0,0,0.6);
+  pointer-events: none;
+}
+
+.collection-card::after {
+  /* subtle dark gradient to improve text contrast */
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45%;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 100%);
+}
+
+.collection-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Product grid - 3 columns */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  max-width: none;
+  margin: 20px 0 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+  .shop-collections .collections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .shop-collections .collections {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .shop-collections .collections {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
