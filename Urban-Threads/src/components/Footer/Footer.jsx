@@ -42,9 +42,9 @@ export default function Footer() {
                     <button type="button">SUBSCRIBE</button>
                 </div>
                 <div className="social-links">
-                    <a href="https://facebook.com" aria-label="Facebook">f</a>
-                    <a href="https://instagram.com" aria-label="Instagram">i</a>
-                    <a href="https://youtube.com" aria-label="YouTube">y</a>
+                    <a href="https://facebook.com" aria-label="Facebook"><i class="bi bi-facebook m-2"></i></a>
+                    <a href="https://instagram.com" aria-label="Instagram"><i class="bi bi-instagram m-2"></i></a>
+                    <a href="https://youtube.com" aria-label="YouTube"><i class="bi bi-youtube m-2"></i></a>
                 </div>
             </div>
         </div>

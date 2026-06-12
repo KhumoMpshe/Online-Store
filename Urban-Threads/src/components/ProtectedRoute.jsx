@@ -8,7 +8,11 @@ export default function ProtectedRoute({ children }) {
     return <div>Loading...</div>;
   }
 
-  const { user } = authContext;
+  const { user, loading } = authContext;
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   if (!user) {
     return <Navigate to="/login" />;

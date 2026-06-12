@@ -5,6 +5,8 @@ import Shop from "./pages/Shop/shop";
 import ShopCategory from "./pages/Shop/ShopCategory";
 import Cart from "./pages/Cart/cart";
 import Login from "./pages/Login/login";
+import SignUp from "./pages/Login/Sign Up/sign-up";
+import Password from "./pages/Login/Password/password";
 
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -26,6 +28,8 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop/:category" element={<ShopCategory />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/forgot-password" element={<Password />} />
 
           {/* PROTECTED ROUTES */}
           <Route

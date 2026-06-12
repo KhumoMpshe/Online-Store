@@ -73,16 +73,16 @@
 
 .user:hover {
   opacity: 1;
-  background: rgba(255, 255, 255, 0.408);
-  border-radius: 50%;
+  text-decoration: underline;
 }
 
 .logout-btn {
-  background: transparent;
+  background: black;
   border: none;
   color: white;
   font-size: 16px;
 }
+
 .logout-btn:hover {
   text-decoration: underline;
 }
@@ -91,3 +91,4 @@ h1 {
     font: bold 26px Lobster;
 
 }
+

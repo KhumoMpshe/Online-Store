@@ -17,22 +17,36 @@ export default function Cart() {
     localStorage.setItem("cart", JSON.stringify(updated));
   };
 
-  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const getItemName = (item) => item.Name || item.name || "Unknown product";
+  const getItemPrice = (item) => item.Price ?? item.price ?? 0;
+
+  const total = cart.reduce((sum, item) => sum + getItemPrice(item) * item.qty, 0);
 
   return (
     <div className="cart">
       <h2>Your Cart</h2>
 
-      {cart.map((item, i) => (
-        <div key={i} className="cart-item">
-          <h4>{item.name}</h4>
-          <p>Qty: {item.qty}</p>
-          <p>${item.price}</p>
-          <button onClick={() => removeItem(i)}>Remove</button>
-        </div>
-      ))}
+      {cart.length === 0 ? (
+        <p>Your cart is empty</p>
+      ) : (
+        <>
+          {cart.map((item, i) => (
+            <div key={i} className="cart-item">
+              <div className="item-name">{getItemName(item)}</div>
+              <div className="item-qty">Qty: {item.qty}</div>
+              <div className="item-price">R{getItemPrice(item).toFixed(2)}</div>
+              <button onClick={() => removeItem(i)} className="item-remove">Remove</button>
+            </div>
+          ))}
 
-      <h3>Total: ${total.toFixed(2)}</h3>
+          <h3>Total: R{total.toFixed(2)}</h3>
+          {cart.length > 0 && (
+            <button className="checkout-button" onClick={() => alert("Checkout not implemented")}>
+              Proceed to Checkout
+            </button>
+          )}
+        </>
+      )}
     </div>
   );
 }

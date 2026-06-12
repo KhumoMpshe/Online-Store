@@ -16,6 +16,7 @@
   max-width: 700px;
   padding: 40px;
   background: rgba(255, 255, 255, 0.8);
+  opacity: 0.9;
   border-radius: 10px;
   color: black;
 }
@@ -38,9 +39,11 @@
 
 .btn {
   padding: 10px 20px;  
-  background: rgb(183, 132, 87) ;
+  background: rgb(12, 12, 12) ;
   color: white;
   text-decoration: none;
   border-radius: 5px;
+  width: 120px;
+  text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

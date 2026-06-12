@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { db } from "../../firebase/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import ProductCard from "../../components/Product/product";
@@ -18,7 +18,18 @@ export default function ShopCategory() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const searchQuery = params.get("search")?.trim().toLowerCase() || "";
   const collectionInfo = collections.find((item) => item.slug === category);
+
+  const filteredProducts = searchQuery
+    ? products.filter((product) => {
+        const name = (product.Name || product.name || product.title || "").toString().toLowerCase();
+        const description = (product.Description || product.description || product.desc || "").toString().toLowerCase();
+        return name.includes(searchQuery) || description.includes(searchQuery);
+      })
+    : products;
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -60,15 +71,19 @@ export default function ShopCategory() {
           <p>Browse the full {collectionInfo.label} collection.</p>
         </div>
         <Link to="/shop" className="collection-back">
+          <i class="bi bi-arrow-left m-2"></i>
           Back to collections
         </Link>
       </div>
 
       {loading && <p>Loading products…</p>}
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
+      {searchQuery && !loading && filteredProducts.length === 0 && (
+        <p>No products matched "{searchQuery}" in {collectionInfo.label}.</p>
+      )}
 
       <div className="grid">
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <ProductCard
             key={product.id}
             product={product}
