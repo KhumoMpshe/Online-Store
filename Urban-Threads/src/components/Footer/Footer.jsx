@@ -51,11 +51,11 @@ export default function Footer() {
 
         <div className="footer-bottom">
             <span>© {new Date().getFullYear()} Urban Threads. All rights reserved.</span>
-                <div className="footer-links">
-                    <a href="/shop">Shop</a>
-                    <a href="/privacy">Privacy</a>  
-                    <a href="/terms">Terms</a>
-                </div>
+            <div className="footer-links">
+                <a href="/shop">Shop</a>
+                <a href="/privacy">Privacy</a>  
+                <a href="/terms">Terms</a>
+            </div>
         </div>
     </footer>
   );
