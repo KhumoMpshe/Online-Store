@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import "./Responsiveness.css";
-
 import { AuthProvider } from "./context/Auth";
 import { BrowserRouter } from "react-router-dom";
 
